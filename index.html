@@ -31,9 +31,8 @@
             color: white;
         }
         select option:disabled {
-            color: #ef4444 !important;
-            background-color: #2a1212 !important;
-            text-decoration: line-through;
+            color: #f87171 !important;
+            background-color: #3b1212 !important;
         }
     </style>
 </head>
@@ -42,15 +41,27 @@
     <!-- Container -->
     <div class="max-w-lg w-full mx-auto glass-card rounded-3xl p-8 shadow-2xl my-auto">
         
+        <!-- Ultra-Elegant Header -->
         <div class="text-center mb-8">
-            <h1 class="text-4xl font-extrabold text-white tracking-wider italic flex justify-center items-center gap-2">
-                ⭐ Nail Archi PH ⭐
+            <div class="flex justify-center items-center gap-3 mb-1">
+                <span class="text-amber-200/60 text-[10px] tracking-[0.3em] font-serif uppercase"></span>
+            </div>
+            
+            <h1 class="text-2xl sm:text-3xl font-serif text-transparent bg-clip-text bg-gradient-to-r from-amber-100 via-emerald-100 to-amber-200 tracking-[0.25em] font-light flex justify-center items-center gap-3 my-2">
+                <span class="text-amber-200/80 text-sm not-italic font-sans">✦</span>
+                <span class="font-normal italic">NAIL ARCHI PH</span>
+                <span class="text-amber-200/80 text-sm not-italic font-sans">✦</span>
             </h1>
-            <div class="flex justify-center items-center gap-2 text-sm text-gray-400 mt-2">
-                <span>⭐⭐⭐</span>
-                <span>•</span>
-                <a href="https://www.instagram.com/nail_archi.ph?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" class="hover:text-pink-300 transition flex items-center gap-1 underline font-medium">
-                    📸 Visit @nail_archi.ph
+            
+            <div class="h-[1px] w-16 bg-gradient-to-r from-transparent via-amber-200/40 to-transparent mx-auto my-2"></div>
+            
+            <p class="text-[10px] uppercase tracking-[0.3em] text-emerald-200/70 font-light">
+                
+            </p>
+            
+            <div class="flex justify-center items-center gap-2 text-xs text-gray-400 mt-3">
+                <a href="https://www.instagram.com/nail_archi.ph?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" class="hover:text-amber-200 transition flex items-center gap-1.5 underline underline-offset-4 decoration-white/20 font-light tracking-widest text-[11px]">
+                    <span class="opacity-70">📸</span> @nail_archi.ph
                 </a>
             </div>
         </div>
@@ -106,7 +117,7 @@
                 </div>
             </div>
 
-            <!-- Calendar Section with Month Controls -->
+            <!-- Calendar Section -->
             <div>
                 <label class="block text-xs font-bold text-gray-300 mb-1.5 uppercase tracking-wider">
                     Selected Date: <span id="selectedDateText" class="text-emerald-300 font-bold ml-1 text-sm">None</span>
@@ -117,7 +128,7 @@
                     <!-- Navigation Header -->
                     <div class="flex justify-between items-center mb-3">
                         <button type="button" id="prevMonthBtn" class="px-3 py-1 bg-white/10 hover:bg-white/20 text-white rounded-lg text-xs font-bold transition">&lt; Prev</button>
-                        <div id="calendarMonthTitle" class="font-bold text-base text-white tracking-wide">AUGUST 2026</div>
+                        <div id="calendarMonthTitle" class="font-bold text-base text-white tracking-wide">SEPTEMBER 2026</div>
                         <button type="button" id="nextMonthBtn" class="px-3 py-1 bg-white/10 hover:bg-white/20 text-white rounded-lg text-xs font-bold transition">Next &gt;</button>
                     </div>
                     
@@ -218,7 +229,7 @@
     <!-- Thank You Modal -->
     <div id="thankYouModal" class="fixed inset-0 bg-black/80 backdrop-blur-md flex items-center justify-center p-4 hidden z-50">
         <div class="glass-card max-w-md w-full p-7 rounded-3xl text-center border border-white/20 shadow-2xl">
-            <div class="text-5xl mb-3">✨</div>
+            <div class="text-4xl mb-3">✦</div>
             <h2 class="text-2xl font-bold text-white mb-1">Appointment Request Sent!</h2>
             <p class="text-sm text-gray-400 mb-5">Thank you for choosing Nail Archi PH</p>
             
@@ -255,25 +266,18 @@
     </div>
 
     <script>
-        const WEB_APP_URL = "https://script.google.com/macros/s/AKfycbyScm97lkgRT-4hAFFXP3fBzym5MVWwBA5ZS_A9UIcPBgLyyEa756OlR2oNpd774_bg/exec";
+        const WEB_APP_URL = "https://script.google.com/macros/s/AKfycby_Qbwn56YkMcqlnX4K9DFXzvlBsLip1Omndhrkpeh5vWw_2nwv1fXyJSArH2O-0kmT/exec";
 
-        // MONTH DATA SETUP (August to September 2026 Only)
         const MONTHS_DATA = [
-            {
-                name: "August",
-                year: 2026,
-                startOffset: 6, // Aug 1, 2026 = Saturday (Day 6)
-                totalDays: 31
-            },
             {
                 name: "September",
                 year: 2026,
-                startOffset: 2, // Sept 1, 2026 = Tuesday (Day 2)
+                startOffset: 2, // Sept 1, 2026 = Tuesday
                 totalDays: 30
             }
         ];
 
-        let currentMonthIndex = 0; // Starts at August
+        let currentMonthIndex = 0;
         let selectedBtn = null;
 
         function renderCalendar() {
@@ -281,7 +285,6 @@
             
             document.getElementById('calendarMonthTitle').innerText = `${currentMonth.name.toUpperCase()} ${currentMonth.year}`;
             
-            // Enable/Disable prev/next buttons
             document.getElementById('prevMonthBtn').disabled = (currentMonthIndex === 0);
             document.getElementById('prevMonthBtn').style.opacity = (currentMonthIndex === 0) ? '0.3' : '1';
             
@@ -291,7 +294,6 @@
             const grid = document.getElementById('calendarGrid');
             grid.innerHTML = '';
 
-            // Blank spaces before Day 1
             for (let i = 0; i < currentMonth.startOffset; i++) {
                 const emptyCell = document.createElement('div');
                 grid.appendChild(emptyCell);
@@ -304,9 +306,6 @@
                 
                 const dayOfWeek = (currentMonth.startOffset + (day - 1)) % 7;
 
-                // Block Rules:
-                // 1. Mondays (1) and Wednesdays (3)
-                // 2. September 5 and September 6
                 const isSept5or6 = (currentMonth.name === "September" && (day === 5 || day === 6));
                 const isBlocked = (dayOfWeek === 1 || dayOfWeek === 3 || isSept5or6);
 
@@ -356,26 +355,32 @@
                 if (i === 0) {
                     options[i].text = "- Choose Slot -";
                 } else {
-                    options[i].text = options[i].value;
-                    
-                    // Rule: Sundays (0) available until 1:30 PM only (Disable 4:00 PM)
-                    if (dayOfWeek === 0 && options[i].value === "4:00 PM") {
+                    const rawTime = options[i].value;
+                    options[i].text = rawTime;
+
+                    if (dayOfWeek === 0 && rawTime === "4:00 PM") {
                         options[i].disabled = true;
-                        options[i].text = "4:00 PM (Not available on Sundays)";
+                        options[i].text = "4:00 PM (❌ Not available on Sundays)";
                     }
                 }
             }
 
-            fetch(`${WEB_APP_URL}?date=${encodeURIComponent(selectedDate)}`)
+            fetch(WEB_APP_URL)
             .then(res => res.json())
             .then(data => {
-                if (data.status === "success") {
-                    const bookedTimes = data.bookedSlots || [];
+                if (data.status === "success" || data.bookedSlots) {
+                    const bookedList = data.bookedSlots || [];
+
+                    const bookedTimesForSelectedDate = bookedList
+                        .filter(item => item.date.toLowerCase().trim() === selectedDate.toLowerCase().trim())
+                        .map(item => item.time.toLowerCase().trim());
 
                     for (let i = 1; i < options.length; i++) {
-                        if (bookedTimes.includes(options[i].value)) {
+                        const rawTime = options[i].value;
+
+                        if (xTimesForSelectedDate.includes(rawTime.toLowerCase().trim())) {
                             options[i].disabled = true;
-                            options[i].text = `${options[i].value} (BOOKED)`;
+                            options[i].text = `❌ ${rawTime} (BOOKED)`;
                         }
                     }
                     statusLabel.innerText = "Slots updated!";
@@ -390,7 +395,6 @@
             });
         }
 
-        // Navigation Handlers
         document.getElementById('prevMonthBtn').addEventListener('click', () => {
             if (currentMonthIndex > 0) {
                 currentMonthIndex--;
