@@ -4,96 +4,60 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nail Archi PH - Online Booking & Appointments</title>
-    <meta name="description" content="Book your nail appointments with Nail Archi PH. Homebased and Home Service nail care services.">
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        .bg-blur-green {
-            background: linear-gradient(135deg, #2d433b 0%, #1a2924 100%);
-        }
-        .glass-card {
-            background: rgba(255, 255, 255, 0.07);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
-        .input-field {
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            color: white;
-        }
-        .input-field:focus {
-            border-color: #a3b899;
-            outline: none;
-            box-shadow: 0 0 10px rgba(163, 184, 153, 0.3);
-        }
-        select option {
-            background: #1a2924;
-            color: white;
-        }
-        select option:disabled {
-            color: #f87171 !important;
-            background-color: #3b1212 !important;
-        }
+        .bg-blur-green { background: linear-gradient(135deg, #2d433b 0%, #1a2924 100%); }
+        .glass-card { background: rgba(255, 255, 255, 0.07); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.1); }
+        .input-field { background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.2); color: white; }
+        .input-field:focus { border-color: #a3b899; outline: none; box-shadow: 0 0 10px rgba(163, 184, 153, 0.3); }
+        select option { background: #1a2924; color: white; }
+        select option:disabled { color: #f87171 !important; background-color: #3b1212 !important; }
     </style>
 </head>
 <body class="bg-blur-green min-h-screen font-sans text-gray-200 flex flex-col justify-between py-8 px-4 relative">
 
-    <!-- Container -->
     <div class="max-w-lg w-full mx-auto glass-card rounded-3xl p-8 shadow-2xl my-auto">
-        
-        <!-- Ultra-Elegant Header -->
         <div class="text-center mb-8">
-            <div class="flex justify-center items-center gap-3 mb-1">
-                <span class="text-amber-200/60 text-[10px] tracking-[0.3em] font-serif uppercase"></span>
-            </div>
-            
             <h1 class="text-2xl sm:text-3xl font-serif text-transparent bg-clip-text bg-gradient-to-r from-amber-100 via-emerald-100 to-amber-200 tracking-[0.25em] font-light flex justify-center items-center gap-3 my-2">
-                <span class="text-amber-200/80 text-sm not-italic font-sans">✦</span>
+                <span class="text-amber-200/80 text-sm">✦</span>
                 <span class="font-normal italic">NAIL ARCHI PH</span>
-                <span class="text-amber-200/80 text-sm not-italic font-sans">✦</span>
+                <span class="text-amber-200/80 text-sm">✦</span>
             </h1>
-            
             <div class="h-[1px] w-16 bg-gradient-to-r from-transparent via-amber-200/40 to-transparent mx-auto my-2"></div>
-            
-            <p class="text-[10px] uppercase tracking-[0.3em] text-emerald-200/70 font-light">
-                
-            </p>
-            
             <div class="flex justify-center items-center gap-2 text-xs text-gray-400 mt-3">
-                <a href="https://www.instagram.com/nail_archi.ph?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" class="hover:text-amber-200 transition flex items-center gap-1.5 underline underline-offset-4 decoration-white/20 font-light tracking-widest text-[11px]">
+                <a href="https://www.instagram.com/nail_archi.ph" target="_blank" class="hover:text-amber-200 transition flex items-center gap-1.5 underline underline-offset-4 decoration-white/20 font-light tracking-widest text-[11px]">
                     <span class="opacity-70">📸</span> @nail_archi.ph
                 </a>
             </div>
         </div>
 
         <form id="bookingForm" class="space-y-5">
-            
             <div class="grid grid-cols-1 gap-4">
                 <div>
-                    <label class="block text-xs font-bold text-gray-300 mb-1.5 uppercase tracking-wider">Full Name</label>
-                    <input type="text" id="customerName" required class="w-full px-4 py-3 rounded-xl input-field transition text-base" placeholder="Type name here">
+                    <label class="block text-xs font-bold text-gray-300 mb-1.5 uppercase">Full Name</label>
+                    <input type="text" id="customerName" required class="w-full px-4 py-3 rounded-xl input-field text-base" placeholder="Type name here">
                 </div>
                 <div>
-                    <label class="block text-xs font-bold text-gray-300 mb-1.5 uppercase tracking-wider">Contact Number</label>
-                    <input type="tel" id="customerPhone" required class="w-full px-4 py-3 rounded-xl input-field transition text-base" placeholder="+63">
-                </div>
-            </div>
-
-            <div class="grid grid-cols-2 gap-4">
-                <div>
-                    <label class="block text-xs font-bold text-gray-300 mb-1.5 uppercase tracking-wider">Facebook Name/Link</label>
-                    <input type="text" id="customerFB" required class="w-full px-3.5 py-3 rounded-xl input-field transition text-sm" placeholder="Link Here">
-                </div>
-                <div>
-                    <label class="block text-xs font-bold text-gray-300 mb-1.5 uppercase tracking-wider">Instagram Link</label>
-                    <input type="text" id="customerIG" class="w-full px-3.5 py-3 rounded-xl input-field transition text-sm" placeholder="Link Here">
+                    <label class="block text-xs font-bold text-gray-300 mb-1.5 uppercase">Contact Number</label>
+                    <input type="tel" id="customerPhone" required class="w-full px-4 py-3 rounded-xl input-field text-base" placeholder="+63">
                 </div>
             </div>
 
             <div class="grid grid-cols-2 gap-4">
                 <div>
-                    <label class="block text-xs font-bold text-gray-300 mb-1.5 uppercase tracking-wider">Services</label>
-                    <select id="baseService" required class="w-full px-3.5 py-3 rounded-xl input-field transition text-sm">
+                    <label class="block text-xs font-bold text-gray-300 mb-1.5 uppercase">Facebook Name/Link</label>
+                    <input type="text" id="customerFB" required class="w-full px-3.5 py-3 rounded-xl input-field text-sm" placeholder="Link Here">
+                </div>
+                <div>
+                    <label class="block text-xs font-bold text-gray-300 mb-1.5 uppercase">Instagram Link</label>
+                    <input type="text" id="customerIG" class="w-full px-3.5 py-3 rounded-xl input-field text-sm" placeholder="Link Here">
+                </div>
+            </div>
+
+            <div class="grid grid-cols-2 gap-4">
+                <div>
+                    <label class="block text-xs font-bold text-gray-300 mb-1.5 uppercase">Services</label>
+                    <select id="baseService" required class="w-full px-3.5 py-3 rounded-xl input-field text-sm">
                         <option value="">- Select Service -</option>
                         <option value="Softgel - ₱399">Softgel - ₱399</option>
                         <option value="Gel - ₱350">Gel - ₱350</option>
@@ -103,8 +67,8 @@
                     </select>
                 </div>
                 <div>
-                    <label class="block text-xs font-bold text-gray-300 mb-1.5 uppercase tracking-wider">Nail Length</label>
-                    <select id="nailLength" required class="w-full px-3.5 py-3 rounded-xl input-field transition text-sm">
+                    <label class="block text-xs font-bold text-gray-300 mb-1.5 uppercase">Nail Length</label>
+                    <select id="nailLength" required class="w-full px-3.5 py-3 rounded-xl input-field text-sm">
                         <option value="Natural / None">Natural / None</option>
                         <option value="XS (+₱30)">XS (+₱30)</option>
                         <option value="S (+₱40)">S (+₱40)</option>
@@ -119,43 +83,30 @@
 
             <!-- Calendar Section -->
             <div>
-                <label class="block text-xs font-bold text-gray-300 mb-1.5 uppercase tracking-wider">
+                <label class="block text-xs font-bold text-gray-300 mb-1.5 uppercase">
                     Selected Date: <span id="selectedDateText" class="text-emerald-300 font-bold ml-1 text-sm">None</span>
                 </label>
                 <input type="hidden" id="bookingDate" required>
 
                 <div class="bg-black/20 p-4 rounded-2xl border border-white/10">
-                    <!-- Navigation Header -->
                     <div class="flex justify-between items-center mb-3">
-                        <button type="button" id="prevMonthBtn" class="px-3 py-1 bg-white/10 hover:bg-white/20 text-white rounded-lg text-xs font-bold transition">&lt; Prev</button>
-                        <div id="calendarMonthTitle" class="font-bold text-base text-white tracking-wide">SEPTEMBER 2026</div>
-                        <button type="button" id="nextMonthBtn" class="px-3 py-1 bg-white/10 hover:bg-white/20 text-white rounded-lg text-xs font-bold transition">Next &gt;</button>
+                        <div id="calendarMonthTitle" class="font-bold text-base text-white">SEPTEMBER 2026</div>
                     </div>
                     
-                    <!-- Days Header -->
                     <div class="grid grid-cols-7 gap-1.5 text-center text-xs font-bold text-gray-400 mb-2">
-                        <div>SUN</div>
-                        <div>MON</div>
-                        <div>TUE</div>
-                        <div>WED</div>
-                        <div>THU</div>
-                        <div>FRI</div>
-                        <div>SAT</div>
+                        <div>SUN</div><div>MON</div><div>TUE</div><div>WED</div><div>THU</div><div>FRI</div><div>SAT</div>
                     </div>
 
-                    <!-- Calendar Grid -->
-                    <div id="calendarGrid" class="grid grid-cols-7 gap-1.5 text-center text-sm">
-                        <!-- Generated via JS -->
-                    </div>
+                    <div id="calendarGrid" class="grid grid-cols-7 gap-1.5 text-center text-sm"></div>
                 </div>
             </div>
 
             <div>
-                <label class="block text-xs font-bold text-gray-300 mb-1.5 uppercase tracking-wider flex justify-between items-center">
+                <label class="block text-xs font-bold text-gray-300 mb-1.5 uppercase flex justify-between items-center">
                     <span>Available Time</span>
-                    <span id="timeSlotStatus" class="text-[10px] text-amber-300 italic hidden">Checking booked slots...</span>
+                    <span id="timeSlotStatus" class="text-[10px] text-amber-300 italic hidden">Checking availability...</span>
                 </label>
-                <select id="bookingTime" required class="w-full px-4 py-3 rounded-xl input-field transition text-sm">
+                <select id="bookingTime" required class="w-full px-4 py-3 rounded-xl input-field text-sm">
                     <option value="">- Select Date First -</option>
                     <option value="8:00 AM">8:00 AM</option>
                     <option value="11:00 AM">11:00 AM</option>
@@ -165,100 +116,67 @@
             </div>
 
             <div>
-                <label class="block text-xs font-bold text-gray-300 mb-1.5 uppercase tracking-wider">Nail Inspo Link / Details</label>
-                <textarea id="nailInspo" rows="2" class="w-full px-4 py-2.5 rounded-xl input-field transition text-sm" placeholder="Paste Pinterest link or type nail art request here..."></textarea>
+                <label class="block text-xs font-bold text-gray-300 mb-1.5 uppercase">Nail Inspo Link / Details</label>
+                <textarea id="nailInspo" rows="2" class="w-full px-4 py-2.5 rounded-xl input-field text-sm" placeholder="Paste link or notes here..."></textarea>
             </div>
 
-            <div class="bg-black/20 p-4 rounded-2xl border border-white/5 text-xs leading-relaxed text-gray-300">
-                <p class="font-bold text-center text-red-300 mb-1.5 uppercase tracking-wider text-sm">✨ Rules ✨</p>
-                <ul class="list-disc pl-5 space-y-1">
-                    <li><strong class="text-white">Service:</strong> Homebased / Home service (THU, FRI, SAT Only)</li>
-                    <li><strong class="text-white">Removal:</strong> ₱150 (My work) | ₱200 (Not my work)</li>
-                    <li><strong class="text-white">Cancellation Fee:</strong> Same as downpayment</li>
-                    <li><strong class="text-white">Resched Fee:</strong> ₱150 (week apart) | ₱100 (days apart)</li>
-                    <li><strong class="text-white">Late Fee:</strong> 20 mins = ₱50 | 30-40 mins = ₱80 | 50 mins-1hr = <span class="text-red-400 font-semibold">Auto Cancelled</span></li>
-                    <li>One companion only | Pay with exact amount</li>
-                </ul>
-            </div>
-
-            <!-- REQUIRED GCASH PAYMENT SECTION -->
-            <div class="bg-blue-950/40 border border-blue-500/30 p-4.5 rounded-2xl space-y-3">
+            <!-- GCash Payment -->
+            <div class="bg-blue-950/40 border border-blue-500/30 p-4 rounded-2xl space-y-3">
                 <div class="flex items-center justify-between border-b border-blue-500/20 pb-2">
-                    <span class="font-extrabold text-blue-400 text-sm tracking-wider flex items-center gap-1.5">
-                        GCASH DOWNPAYMENT
-                    </span>
-                    <span class="text-xs bg-blue-500/20 text-blue-300 font-bold px-2.5 py-0.5 rounded-full border border-blue-400/30">
-                        ₱200
-                    </span>
+                    <span class="font-bold text-blue-400 text-sm">GCASH DOWNPAYMENT</span>
+                    <span class="text-xs bg-blue-500/20 text-blue-300 font-bold px-2 py-0.5 rounded-full">₱200</span>
                 </div>
-                
-                <div class="text-xs text-gray-300 space-y-1">
-                    <p>Send <strong>₱200 downpayment</strong> to reserve your slot:</p>
-                    <div class="bg-black/40 p-3 rounded-xl border border-white/10 flex justify-between items-center my-2">
-                        <div>
-                            <p class="text-gray-400 text-[10px] uppercase font-bold tracking-wider">GCash Number</p>
-                            <p class="text-white text-base font-extrabold tracking-widest">0966 986 4780</p>
-                            <p class="text-gray-400 text-[11px]">Nail Archi PH</p>
-                        </div>
-                    </div>
-                </div>
-
                 <div>
-                    <label class="block text-xs font-bold text-gray-300 mb-1.5 uppercase tracking-wider">
-                        GCash Reference No. <span class="text-red-400 font-bold">(REQUIRED)</span>
-                    </label>
-                    <input type="text" id="gcashRef" required class="w-full px-4 py-2.5 rounded-xl input-field transition text-sm" placeholder="e.g. 100234567890">
+                    <label class="block text-xs font-bold text-gray-300 mb-1 uppercase">GCash Reference No.</label>
+                    <input type="text" id="gcashRef" required class="w-full px-4 py-2.5 rounded-xl input-field text-sm" placeholder="e.g. 100234567890">
                 </div>
             </div>
 
-            <button type="submit" class="w-full bg-stone-700 hover:bg-stone-600 text-white font-bold py-3.5 px-4 rounded-xl shadow-lg border border-white/10 transition duration-200 transform active:scale-95 text-base uppercase tracking-widest mt-2">
+            <button type="submit" class="w-full bg-stone-700 hover:bg-stone-600 text-white font-bold py-3.5 px-4 rounded-xl shadow-lg border border-white/10 transition uppercase tracking-widest">
                 Confirm Appointment
             </button>
         </form>
     </div>
 
-    <div class="text-center text-sm text-gray-400 italic max-w-sm mx-auto mt-8 space-y-2">
-        <p>"Let's start the year with a balanced approach <br>(please dont stress your nailtech )"</p>
-        <p>
-            <a href="https://www.instagram.com/nail_archi.ph?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" class="text-pink-400 hover:text-pink-300 underline font-semibold not-italic">
-                ✨ Visit our Instagram Page ✨
-            </a>
-        </p>
-    </div>
-
     <!-- Thank You Modal -->
-    <div id="thankYouModal" class="fixed inset-0 bg-black/80 backdrop-blur-md flex items-center justify-center p-4 hidden z-50">
-        <div class="glass-card max-w-md w-full p-7 rounded-3xl text-center border border-white/20 shadow-2xl">
-            <div class="text-4xl mb-3">✦</div>
-            <h2 class="text-2xl font-bold text-white mb-1">Appointment Request Sent!</h2>
-            <p class="text-sm text-gray-400 mb-5">Thank you for choosing Nail Archi PH</p>
+    <div id="thankYouModal" class="fixed inset-0 bg-black/85 backdrop-blur-md flex items-center justify-center p-4 hidden z-50 overflow-y-auto">
+        <div class="bg-[#121212] max-w-sm w-full p-6 rounded-3xl text-center border border-white/10 shadow-2xl space-y-4 my-auto">
             
-            <div class="bg-black/30 text-left p-4 rounded-2xl text-sm space-y-2 text-gray-300 mb-5">
-                <p>👤 <strong class="text-white">Client:</strong> <span id="summaryName"></span></p>
-                <p>💬 <strong class="text-white">FB Account:</strong> <span id="summaryFB"></span></p>
-                <p>📸 <strong class="text-white">IG Account:</strong> <span id="summaryIG"></span></p>
-                <p>💅 <strong class="text-white">Base Service:</strong> <span id="summaryService"></span></p>
-                <p>📏 <strong class="text-white">Nail Length:</strong> <span id="summaryLength"></span></p>
-                <p>📅 <strong class="text-white">Schedule:</strong> <span id="summarySched"></span></p>
-                <p>💙 <strong class="text-white">GCash Ref No.:</strong> <span id="summaryGcash" class="text-blue-300 font-mono font-bold"></span></p>
+            <!-- Matched Star Icon Header -->
+            <div class="flex justify-center items-center gap-2">
+                <span class="text-amber-200/80 text-base">✦</span>
+                <span class="text-amber-200/80 text-xl">✦</span>
+                <span class="text-amber-200/80 text-base">✦</span>
             </div>
-            
-            <div class="bg-red-950/40 border border-red-500/30 p-4 rounded-2xl text-left mb-5">
-                <p class="text-xs text-yellow-300 font-bold mb-1">⚠️ IMPORTANT REMINDER:</p>
-                <p class="text-xs text-gray-300 leading-relaxed">
-                    The amount listed above is the <span class="text-white font-bold">BASE RATE ONLY</span>. Your <span class="text-white font-bold">final total bill</span> will depend on your requested nail art or design. 
-                </p>
-                <p class="text-xs text-gray-300 leading-relaxed mt-1">
-                    Please wait for a text or DM from your nail tech for the final quotation and verification of your payment.
-                </p>
-            </div>
-            
-            <div class="space-y-3">
-                <a href="https://www.instagram.com/nail_archi.ph?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" class="w-full flex items-center justify-center gap-2 bg-gradient-to-r from-pink-600 to-purple-600 hover:from-pink-500 hover:to-purple-500 text-white text-sm font-bold py-3 px-4 rounded-xl transition border border-white/20 shadow-md">
-                    <span>📸</span> Visit Our Instagram Page
-                </a>
 
-                <button id="closeModalBtn" class="w-full bg-white/10 hover:bg-white/20 text-white text-xs font-semibold py-3 px-4 rounded-xl transition border border-white/10">
+            <h2 class="text-xl font-bold text-white tracking-wide -mt-1">Appointment Request Sent!</h2>
+            <p class="text-xs text-gray-400 -mt-2">Thank you for choosing Nail Archi PH</p>
+            
+            <!-- Summary Details -->
+            <div class="bg-[#1a1a1a] text-left p-4 rounded-2xl text-xs space-y-2.5 text-gray-300 border border-white/5">
+                <p class="flex items-center gap-2"><span class="text-base">👤</span> <strong class="text-gray-200">Client:</strong> <span id="summaryName" class="text-white font-medium"></span></p>
+                <p class="flex items-center gap-2"><span class="text-base">💬</span> <strong class="text-gray-200">FB Account:</strong> <span id="summaryFB" class="break-all"></span></p>
+                <p class="flex items-center gap-2"><span class="text-base">📸</span> <strong class="text-gray-200">IG Account:</strong> <span id="summaryIG" class="break-all"></span></p>
+                <p class="flex items-center gap-2"><span class="text-base">💅</span> <strong class="text-gray-200">Base Service:</strong> <span id="summaryService" class="text-white font-medium"></span></p>
+                <p class="flex items-center gap-2"><span class="text-base">📏</span> <strong class="text-gray-200">Nail Length:</strong> <span id="summaryLength" class="text-white font-medium"></span></p>
+                <p class="flex items-start gap-2"><span class="text-base">📅</span> <span><strong class="text-gray-200">Schedule:</strong> <span id="summarySched" class="text-white font-medium"></span></span></p>
+                <p class="flex items-center gap-2"><span class="text-base">💙</span> <strong class="text-gray-200">GCash Ref No.:</strong> <span id="summaryGcash" class="text-blue-400 font-mono font-bold"></span></p>
+            </div>
+
+            <!-- Important Reminder Box -->
+            <div class="bg-amber-950/20 border border-amber-600/30 text-left p-3.5 rounded-2xl text-[11px] text-amber-200/90 space-y-1.5">
+                <p class="font-bold text-amber-400 flex items-center gap-1">⚠️ IMPORTANT REMINDER:</p>
+                <p class="leading-relaxed">The amount listed above is the <strong class="text-amber-200">BASE RATE ONLY</strong>. Your <strong class="text-amber-200">final total bill</strong> will depend on your requested nail art or design.</p>
+                <p class="leading-relaxed text-amber-200/70">Please wait for a text or DM from your nail tech for the final quotation and verification of your payment.</p>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="space-y-2 pt-1">
+                <a href="https://www.instagram.com/nail_archi.ph" target="_blank" class="w-full bg-gradient-to-r from-pink-600 via-purple-600 to-indigo-600 hover:opacity-90 text-white font-bold py-3 px-4 rounded-xl transition flex items-center justify-center gap-2 text-xs shadow-lg">
+                    📸 Visit Our Instagram Page
+                </a>
+                
+                <button id="closeModalBtn" class="w-full bg-[#2a2a2a] hover:bg-[#333333] text-gray-200 text-xs font-semibold py-3 px-4 rounded-xl transition border border-white/5">
                     I Understand & Close
                 </button>
             </div>
@@ -266,37 +184,21 @@
     </div>
 
     <script>
-        const WEB_APP_URL = "https://script.google.com/macros/s/AKfycby_Qbwn56YkMcqlnX4K9DFXzvlBsLip1Omndhrkpeh5vWw_2nwv1fXyJSArH2O-0kmT/exec";
+        const WEB_APP_URL = "https://script.google.com/macros/s/AKfycbw1NK2eBnYuVevzWRCfLu1WLQoV7F_U8_TFYok-L2Kk1iR_0g21227noNwm_TEUn3cX/exec";
 
-        const MONTHS_DATA = [
-            {
-                name: "September",
-                year: 2026,
-                startOffset: 2, // Sept 1, 2026 = Tuesday
-                totalDays: 30
-            }
-        ];
+        const MONTHS_DATA = [{ name: "September", year: 2026, startOffset: 2, totalDays: 30 }];
+        const DAYS_SHORT = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
 
-        let currentMonthIndex = 0;
         let selectedBtn = null;
+        let formattedSelectedDate = "";
 
         function renderCalendar() {
-            const currentMonth = MONTHS_DATA[currentMonthIndex];
-            
-            document.getElementById('calendarMonthTitle').innerText = `${currentMonth.name.toUpperCase()} ${currentMonth.year}`;
-            
-            document.getElementById('prevMonthBtn').disabled = (currentMonthIndex === 0);
-            document.getElementById('prevMonthBtn').style.opacity = (currentMonthIndex === 0) ? '0.3' : '1';
-            
-            document.getElementById('nextMonthBtn').disabled = (currentMonthIndex === MONTHS_DATA.length - 1);
-            document.getElementById('nextMonthBtn').style.opacity = (currentMonthIndex === MONTHS_DATA.length - 1) ? '0.3' : '1';
-
+            const currentMonth = MONTHS_DATA[0];
             const grid = document.getElementById('calendarGrid');
             grid.innerHTML = '';
 
             for (let i = 0; i < currentMonth.startOffset; i++) {
-                const emptyCell = document.createElement('div');
-                grid.appendChild(emptyCell);
+                grid.appendChild(document.createElement('div'));
             }
 
             for (let day = 1; day <= currentMonth.totalDays; day++) {
@@ -305,25 +207,21 @@
                 dayBtn.innerText = day;
                 
                 const dayOfWeek = (currentMonth.startOffset + (day - 1)) % 7;
-
-                const isSept5or6 = (currentMonth.name === "September" && (day === 5 || day === 6));
+                const isSept5or6 = (day === 5 || day === 6);
                 const isBlocked = (dayOfWeek === 1 || dayOfWeek === 3 || isSept5or6);
 
                 if (!isBlocked) {
                     dayBtn.className = 'py-2.5 rounded-xl font-bold bg-emerald-900/50 text-emerald-300 border border-emerald-500/40 hover:bg-emerald-600 hover:text-white transition cursor-pointer';
-                    dayBtn.onclick = () => selectDate(day, dayOfWeek, dayBtn, currentMonth);
+                    dayBtn.onclick = () => selectDate(day, dayOfWeek, dayBtn);
                 } else {
                     dayBtn.className = 'py-2.5 rounded-xl font-medium bg-red-950/20 text-red-500/60 line-through border border-red-900/20 cursor-not-allowed';
-                    dayBtn.onclick = () => {
-                        alert(`Sorry, ${currentMonth.name} ${day} is not available for booking.`);
-                    };
                 }
 
                 grid.appendChild(dayBtn);
             }
         }
 
-        function selectDate(day, dayOfWeek, btn, monthObj) {
+        function selectDate(day, dayOfWeek, btn) {
             if (selectedBtn) {
                 selectedBtn.classList.remove('bg-emerald-500', 'text-white', 'ring-2', 'ring-white');
                 selectedBtn.classList.add('bg-emerald-900/50', 'text-emerald-300');
@@ -333,14 +231,15 @@
             btn.classList.add('bg-emerald-500', 'text-white', 'ring-2', 'ring-white');
             selectedBtn = btn;
 
-            const dateVal = `${monthObj.name} ${day}, ${monthObj.year}`;
-            document.getElementById('bookingDate').value = dateVal;
-            document.getElementById('selectedDateText').innerText = dateVal;
+            formattedSelectedDate = `Sep ${day}, ${DAYS_SHORT[dayOfWeek]}`;
 
-            fetchBookedSlots(dateVal, dayOfWeek);
+            document.getElementById('bookingDate').value = formattedSelectedDate;
+            document.getElementById('selectedDateText').innerText = formattedSelectedDate;
+
+            fetchBookedSlots(formattedSelectedDate, dayOfWeek);
         }
 
-        function fetchBookedSlots(selectedDate, dayOfWeek) {
+        function fetchBookedSlots(selectedDateFormatted, dayOfWeek) {
             const statusLabel = document.getElementById('timeSlotStatus');
             const timeSelect = document.getElementById('bookingTime');
             
@@ -368,19 +267,23 @@
             fetch(WEB_APP_URL)
             .then(res => res.json())
             .then(data => {
-                if (data.status === "success" || data.bookedSlots) {
-                    const bookedList = data.bookedSlots || [];
-
-                    const bookedTimesForSelectedDate = bookedList
-                        .filter(item => item.date.toLowerCase().trim() === selectedDate.toLowerCase().trim())
-                        .map(item => item.time.toLowerCase().trim());
+                if (data.status === "success" && data.bookedSlots) {
+                    const bookedList = data.bookedSlots;
 
                     for (let i = 1; i < options.length; i++) {
-                        const rawTime = options[i].value;
+                        const rawTime = options[i].value.toLowerCase().trim();
 
-                        if (xTimesForSelectedDate.includes(rawTime.toLowerCase().trim())) {
+                        const isBooked = bookedList.some(item => {
+                            const sheetDate = String(item.date).toLowerCase().trim();
+                            const sheetTime = String(item.time).toLowerCase().trim();
+                            const targetDate = selectedDateFormatted.toLowerCase().trim();
+
+                            return sheetDate === targetDate && sheetTime === rawTime;
+                        });
+
+                        if (isBooked) {
                             options[i].disabled = true;
-                            options[i].text = `❌ ${rawTime} (BOOKED)`;
+                            options[i].text = `❌ ${options[i].value} (BOOKED)`;
                         }
                     }
                     statusLabel.innerText = "Slots updated!";
@@ -395,87 +298,44 @@
             });
         }
 
-        document.getElementById('prevMonthBtn').addEventListener('click', () => {
-            if (currentMonthIndex > 0) {
-                currentMonthIndex--;
-                selectedBtn = null;
-                renderCalendar();
-            }
-        });
-
-        document.getElementById('nextMonthBtn').addEventListener('click', () => {
-            if (currentMonthIndex < MONTHS_DATA.length - 1) {
-                currentMonthIndex++;
-                selectedBtn = null;
-                renderCalendar();
-            }
-        });
-
         renderCalendar();
 
         document.getElementById('bookingForm').addEventListener('submit', function(e) {
             e.preventDefault();
             
-            const dateInput = document.getElementById('bookingDate').value;
-            if (!dateInput) {
-                alert("Please select an available date from the calendar.");
-                return;
-            }
-
-            const time = document.getElementById('bookingTime').value;
-            if (!time) {
-                alert("Please choose a time slot.");
-                return;
-            }
-
-            const gcashRef = document.getElementById('gcashRef').value.trim();
-            if (!gcashRef) {
-                alert("Please enter your GCash Reference Number to proceed.");
-                return;
-            }
-
-            const submitBtn = e.target.querySelector('button[type="submit"]');
-            const originalBtnText = submitBtn.innerText;
-            submitBtn.innerText = "CHECKING AVAILABILITY...";
-            submitBtn.disabled = true;
-
             const name = document.getElementById('customerName').value;
             const phone = document.getElementById('customerPhone').value;
             const fbInput = document.getElementById('customerFB').value.trim();
             const igInput = document.getElementById('customerIG').value.trim();
             const serviceSelect = document.getElementById('baseService').value;
             const lengthSelect = document.getElementById('nailLength').value;
-            const inspo = document.getElementById('nailInspo').value;
+            const dateInput = document.getElementById('bookingDate').value;
+            const time = document.getElementById('bookingTime').value;
+            const gcashRef = document.getElementById('gcashRef').value.trim();
 
-            let fbLink = fbInput;
-            if (!fbInput.includes('facebook.com') && !fbInput.includes('http')) {
-                fbLink = `https://www.facebook.com/search/top/?q=${encodeURIComponent(fbInput)}`;
-            }
-            
-            let igLink = igInput;
-            if (igInput && !igInput.includes('instagram.com') && !igInput.includes('http')) {
-                const cleanIG = igInput.replace('@', '');
-                igLink = `https://www.instagram.com/${cleanIG}`;
-            }
+            const submitBtn = e.target.querySelector('button[type="submit"]');
+            submitBtn.innerText = "CHECKING AVAILABILITY...";
+            submitBtn.disabled = true;
+
+            let fbLink = fbInput.includes('http') ? fbInput : `https://www.facebook.com/search/top/?q=${encodeURIComponent(fbInput)}`;
+            let igLink = igInput ? (igInput.includes('http') ? igInput : `https://www.instagram.com/${igInput.replace('@', '')}`) : "";
 
             const formData = {
                 fullName: name,
                 contactNumber: phone,
                 fbLink: fbLink,
-                igLink: igInput ? igLink : "None",
+                igLink: igLink || "None",
                 date: dateInput,
                 time: time,
                 service: serviceSelect,
                 nailLength: lengthSelect,
-                nailInspo: inspo ? inspo : "None",
+                nailInspo: document.getElementById('nailInspo').value || "None",
                 gcashRef: gcashRef
             };
 
             fetch(WEB_APP_URL, {
                 method: 'POST',
-                headers: {
-                    'Content-Type': 'text/plain;charset=utf-8'
-                },
+                headers: { 'Content-Type': 'text/plain;charset=utf-8' },
                 body: JSON.stringify(formData)
             })
             .then(response => response.json())
@@ -484,24 +344,15 @@
                     alert("⚠️ " + result.message);
                 } else if (result.status === "success") {
                     document.getElementById('summaryName').innerText = name;
-                    document.getElementById('summaryFB').innerHTML = `<a href="${fbLink}" target="_blank" class="text-blue-400 underline hover:text-blue-300 break-all">${fbInput}</a>`;
-                    
-                    const igElement = document.getElementById('summaryIG');
-                    if(igInput) {
-                        igElement.innerHTML = `<a href="${igLink}" target="_blank" class="text-pink-400 underline hover:text-pink-300 break-all">${igInput}</a>`;
-                    } else {
-                        igElement.innerText = "None provided";
-                    }
-                    
+                    document.getElementById('summaryFB').innerHTML = `<a href="${fbLink}" target="_blank" class="text-blue-400 underline">${fbInput}</a>`;
+                    document.getElementById('summaryIG').innerHTML = igInput ? `<a href="${igLink}" target="_blank" class="text-pink-400 underline">${igInput}</a>` : '<span class="text-gray-400">None</span>';
                     document.getElementById('summaryService').innerText = serviceSelect;
                     document.getElementById('summaryLength').innerText = lengthSelect;
-                    document.getElementById('summarySched').innerText = dateInput + " at " + time;
+                    document.getElementById('summarySched').innerText = `${dateInput} at ${time}`;
                     document.getElementById('summaryGcash').innerText = gcashRef;
 
                     document.getElementById('thankYouModal').classList.remove('hidden');
-                    
                     document.getElementById('bookingForm').reset();
-                    document.getElementById('bookingDate').value = '';
                     document.getElementById('selectedDateText').innerText = 'None';
                     if (selectedBtn) {
                         selectedBtn.classList.remove('bg-emerald-500', 'text-white', 'ring-2', 'ring-white');
@@ -511,11 +362,10 @@
                 }
             })
             .catch(error => {
-                alert("An error occurred while submitting your request. Please try again.");
-                console.error("Error:", error);
+                alert("An error occurred. Please try again.");
             })
             .finally(() => {
-                submitBtn.innerText = originalBtnText;
+                submitBtn.innerText = "Confirm Appointment";
                 submitBtn.disabled = false;
             });
         });
