@@ -87,7 +87,6 @@
                 </div>
             </div>
 
-            <!-- Calendar Section -->
             <div>
                 <label class="block text-xs font-bold text-gray-300 mb-1.5 uppercase">
                     Selected Date: <span id="selectedDateText" class="text-emerald-300 font-bold ml-1 text-sm">None</span>
@@ -122,7 +121,6 @@
                 <textarea id="nailInspo" rows="2" class="w-full px-4 py-2.5 rounded-xl input-field text-sm" placeholder="Paste link or notes here..."></textarea>
             </div>
 
-            <!-- GCash Payment -->
             <div class="bg-blue-950/40 border border-blue-500/30 p-4 rounded-2xl space-y-3">
                 <div class="flex items-center justify-between border-b border-blue-500/20 pb-2">
                     <span class="font-bold text-blue-400 text-sm">GCASH DOWNPAYMENT</span>
@@ -142,13 +140,25 @@
                 </div>
             </div>
 
+            <div class="bg-black/20 p-4 rounded-2xl border border-white/5 text-xs leading-relaxed text-gray-300">
+                <p class="font-bold text-center text-red-300 mb-1.5 uppercase tracking-wider text-sm">✨ Rules ✨</p>
+                <ul class="list-disc pl-5 space-y-1">
+                    <li><strong class="text-white">Service:</strong> Homebased / Home service (THU, FRI, SAT Only)</li>
+                    <li><strong class="text-white">Removal:</strong> ₱150 (My work) | ₱200 (Not my work)</li>
+                    <li><strong class="text-white">Downpayment:</strong> ₱200 (week prior)</li>
+                    <li><strong class="text-white">Cancellation Fee:</strong> Same as downpayment</li>
+                    <li><strong class="text-white">Resched Fee:</strong> ₱150 (week apart) | ₱100 (days apart)</li>
+                    <li><strong class="text-white">Late Fee:</strong> 20 mins = ₱50 | 30-40 mins = ₱80 | 50 mins-1hr = <span class="text-red-400 font-semibold">Auto Cancelled</span></li>
+                    <li>One companion only | Pay with exact amount</li>
+                </ul>
+            </div>
+
             <button type="submit" class="w-full bg-stone-700 hover:bg-stone-600 text-white font-bold py-3.5 px-4 rounded-xl shadow-lg border border-white/10 transition uppercase tracking-widest">
                 Confirm Appointment
             </button>
         </form>
     </div>
 
-    <!-- Thank You Modal -->
     <div id="thankYouModal" class="fixed inset-0 bg-black/85 backdrop-blur-md flex items-center justify-center p-4 hidden z-50 overflow-y-auto">
         <div class="bg-[#121212] max-w-sm w-full p-6 rounded-3xl text-center border border-white/10 shadow-2xl space-y-4 my-auto">
             
@@ -198,7 +208,6 @@
         let selectedBtn = null;
         let formattedSelectedDate = "";
 
-        // Function para i-linis ang time string para flexible mag-match (e.g. 8:30 AM == 08:30am)
         function cleanString(str) {
             if (!str) return "";
             return String(str).toLowerCase().replace(/[^a-z0-9]/g, '');
@@ -242,7 +251,6 @@
             btn.classList.add('bg-emerald-500', 'text-white', 'ring-2', 'ring-white');
             selectedBtn = btn;
 
-            // EXACT SHEET FORMAT: "Sep 15, Tue"
             formattedSelectedDate = `Sep ${day}, ${DAYS_SHORT[dayOfWeek]}`;
 
             document.getElementById('bookingDate').value = formattedSelectedDate;
@@ -292,10 +300,10 @@
             .then(data => {
                 if (data.status === "success" && data.bookedSlots) {
                     const bookedList = data.bookedSlots;
-                    const targetDateClean = cleanString(selectedDateFormatted); // e.g. "sep15tue"
+                    const targetDateClean = cleanString(selectedDateFormatted);
 
                     for (let i = 1; i < options.length; i++) {
-                        const optTimeClean = cleanString(options[i].value); // e.g. "830am"
+                        const optTimeClean = cleanString(options[i].value);
 
                         const isBooked = bookedList.some(item => {
                             const sheetDateClean = cleanString(item.date);
