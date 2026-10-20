@@ -116,7 +116,7 @@
                         </button>
                         
                         <div id="calendarMonthTitle" class="font-serif text-sm sm:text-base text-amber-100 uppercase tracking-[0.2em] font-light">
-                            SEPTEMBER 2026
+                            OCTOBER 2026
                         </div>
                         
                         <button type="button" id="nextMonthBtn" class="btn-month-nav px-3.5 py-1.5 rounded-full text-xs font-light tracking-wider flex items-center gap-1.5">
@@ -229,8 +229,8 @@
         const WEB_APP_URL = "https://script.google.com/macros/s/AKfycbw1NK2eBnYuVevzWRCfLu1WLQoV7F_U8_TFYok-L2Kk1iR_0g21227noNwm_TEUn3cX/exec";
 
         const MONTHS_DATA = [
-            { name: "October", monthNum: 10, year: 2026, startOffset: 2, totalDays: 31 },
-            { name: "November", monthNum: 11, year: 2026, startOffset: 4, totalDays: 30 }
+            { name: "October", monthNum: 10, year: 2026, startOffset: 4, totalDays: 31 },
+            { name: "November", monthNum: 11, year: 2026, startOffset: 0, totalDays: 30 }
         ];
         const DAYS_SHORT = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
 
@@ -261,12 +261,13 @@
                 
                 const dayOfWeek = (currentMonth.startOffset + (day - 1)) % 7;
                 
-                // Rules: Mon (1) & Wed (3) are blocked.
-                // Sep 23 and earlier dates are also blocked/expired.
+              
                 const isBlockedDay = (dayOfWeek === 1 || dayOfWeek === 3);
-                const isPastDate = (currentMonth.monthNum === 9 && day <= 23);
+                
+                // blocked / Red Oct 24 25 27 28 29
+                const isCustomBlocked = (currentMonth.monthNum === 10 && (day === 24 || day === 25|| day === 27|| day === 28|| day === 29));
 
-                if (!isBlockedDay && !isPastDate) {
+                if (!isBlockedDay && !isCustomBlocked) {
                     dayBtn.className = 'py-2.5 rounded-xl font-bold bg-emerald-900/50 text-emerald-300 border border-emerald-500/40 hover:bg-emerald-600 hover:text-white transition cursor-pointer';
                     dayBtn.onclick = () => selectDate(day, dayOfWeek, currentMonth, dayBtn);
                 } else {
@@ -316,13 +317,7 @@
 
             timeSelect.innerHTML = "";
             
-            let availableTimeSlots = [];
-            
-            if (monthNum === 9 && day < 15) {
-                availableTimeSlots = ["8:00 AM", "11:00 AM", "1:30 PM", "4:00 PM"];
-            } else {
-                availableTimeSlots = ["8:30 AM", "11:30 AM", "2:10 PM"];
-            }
+            let availableTimeSlots = ["8:30 AM", "11:30 AM", "2:10 PM"];
 
             const defaultOpt = document.createElement('option');
             defaultOpt.value = "";
@@ -333,11 +328,6 @@
                 const opt = document.createElement('option');
                 opt.value = timeStr;
                 opt.text = timeStr;
-
-                if (monthNum === 9 && day < 15 && dayOfWeek === 0 && timeStr === "4:00 PM") {
-                    opt.disabled = true;
-                    opt.text = "🔴 4:00 PM (Not available on Sundays)";
-                }
 
                 timeSelect.appendChild(opt);
             });
